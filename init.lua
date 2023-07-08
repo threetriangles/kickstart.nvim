@@ -211,7 +211,8 @@ require('lazy').setup({
 -- NOTE: You can change these options as you wish!
 
 -- Set highlight on search
-vim.o.hlsearch = false
+vim.o.hlsearch = true
+
 
 -- Make line numbers default
 vim.wo.number = true
@@ -257,6 +258,11 @@ vim.keymap.set({ 'n', 'v' }, '<Space>', '<Nop>', { silent = true })
 -- Remap for dealing with word wrap
 vim.keymap.set('n', 'k', "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true })
 vim.keymap.set('n', 'j', "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true })
+
+-- NvimTree
+vim.keymap.set({ 'n' }, '<leader>f', ':NvimTreeToggle<CR>', { silent = true })
+vim.keymap.set({ 'n' }, "<leader>ff", ':NvimTreeFindFile<CR>', {silent = true})
+vim.keymap.set({ 'n' }, "<leader>u", ':only', {silent = true})
 
 -- [[ Highlight on yank ]]
 -- See `:help vim.highlight.on_yank()`
