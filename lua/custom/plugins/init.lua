@@ -3,22 +3,15 @@
 --
 -- See the kickstart.nvim README for more information
 require("config.options")
+require("config.keymaps")
 return {
-
+	-- utilities
 	'nvim-tree/nvim-tree.lua',
 	'christoomey/vim-tmux-navigator',
+	'christoomey/vim-tmux-runner',
 	'tpope/vim-obsession',
-	'jiangmiao/auto-pairs',
 	'tpope/vim-surround',
-	{
-		'akinsho/bufferline.nvim',
-		version = "*",
-		dependencies = { 'nvim-tree/nvim-web-devicons' },
-		config = function()
-			require('nvim-tree').setup {}
-		end,
-	},
-
+	'jiangmiao/auto-pairs',
 	{
 		'phaazon/hop.nvim',
 		branch = 'v2', -- optional but strongly recommended
@@ -27,6 +20,40 @@ return {
 			require 'hop'.setup { keys = 'etovxqpdygfblzhckisuran' }
 		end
 	},
+	{
+		'phaazon/hop.nvim',
+		branch = 'v2', -- optional but strongly recommended
+		config = function()
+			-- you can configure Hop the way you like here; see :h hop-config
+			require 'hop'.setup { keys = 'etovxqpdygfblzhckisuran' }
+		end
+	},
+	-- ui
+	{
+		'echasnovski/mini.nvim',
+		version = '*',
+		config = function()
+			-- require('mini.tabline').setup {}
+			require('mini.animate').setup {}
+		end,
+	},
+	{
+		'akinsho/bufferline.nvim',
+		version = "*",
+		dependencies = { 'nvim-tree/nvim-web-devicons' },
+		config = function()
+			require('bufferline').setup({
+				options = {
+					mode = 'tabs',
+					separator_style = 'slant',
+					diagnostics = 'nvim_lsp',
+				}
+			})
+		end,
+	},
+
+	-- colorschemes
+	{ 'catppuccin/nvim', name = "catppuccin", priority = 1000 },
 
 	{
 		'rose-pine/neovim',
@@ -35,7 +62,6 @@ return {
 			vim.cmd.colorscheme 'rose-pine'
 		end,
 	},
-
 
 
 
