@@ -11,7 +11,7 @@ vim.keymap.set({ 'n' }, '<leader>ss', '<cmd>VtrSendCommandToRunner!<CR><space>ie
 -- NvimTree
 vim.keymap.set({ 'n' }, '<leader>f', ':NvimTreeToggle<CR>', { silent = true })
 vim.keymap.set({ 'n' }, "<leader>ff", ':NvimTreeFindFile<CR>', { silent = true })
-vim.keymap.set({ 'n' }, "<leader>u", ':only', { silent = true })
+vim.keymap.set({ 'n' }, '<leader>u', ':only<CR>', { silent = true })
 
 -- copy file path to clipboard
 vim.keymap.set({ 'n' }, '<leader>cp', ':let @+ = expand("%")<CR>', { silent = true })
