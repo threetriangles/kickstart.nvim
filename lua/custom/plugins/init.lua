@@ -6,7 +6,13 @@ require("config.options")
 require("config.keymaps")
 return {
 	-- utilities
-	'nvim-tree/nvim-tree.lua',
+	{
+		'nvim-tree/nvim-tree.lua',
+
+		config = function()
+			require('nvim-tree').setup()
+		end,
+	},
 	'christoomey/vim-tmux-navigator',
 	'christoomey/vim-tmux-runner',
 	'tpope/vim-obsession',
@@ -58,7 +64,12 @@ return {
 	{
 		'rose-pine/neovim',
 		priority = 1000,
+
 		config = function()
+			require('rose-pine').setup({
+				variant = 'main',
+				bold_vert_split = false,
+			})
 			vim.cmd.colorscheme 'rose-pine'
 		end,
 	},

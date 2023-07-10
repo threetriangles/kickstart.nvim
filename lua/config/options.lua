@@ -12,7 +12,8 @@ local options = {
 	swapfile = false,
 
 	-- run my aliases
-	shellcmdflag = "-ic"
+	shellcmdflag = "-ic",
+
 }
 
 
