@@ -13,6 +13,12 @@ return {
 			require('nvim-tree').setup()
 		end,
 	},
+	{
+		'andymass/vim-matchup',
+		setup = function()
+			vim.g.matchup_matchparen_offscreen = { method = 'popup' }
+		end
+	},
 	'christoomey/vim-tmux-navigator',
 	'christoomey/vim-tmux-runner',
 	'tpope/vim-obsession',
@@ -53,6 +59,7 @@ return {
 					mode = 'tabs',
 					separator_style = 'slant',
 					diagnostics = 'nvim_lsp',
+					numbers = 'ordinal'
 				}
 			})
 		end,
@@ -60,6 +67,13 @@ return {
 
 	-- colorschemes
 	{ 'catppuccin/nvim', name = "catppuccin", priority = 1000 },
+
+	{
+		"folke/tokyonight.nvim",
+		lazy = false,
+		priority = 1000,
+		opts = {},
+	},
 
 	{
 		'rose-pine/neovim',
